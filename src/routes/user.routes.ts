@@ -3,10 +3,11 @@ import { loginController } from "../components/user/use-cases/login";
 
 const userRoutes = Router();
 
-userRoutes.post("/", (req: Request, res: Response, next: NextFunction) => {
-  async (req: Request, res: Response, next: NextFunction) => {
-    return loginController.handle(req, res, next);
-  }
-});
+userRoutes.post(
+  "/",
+  async (request: Request, response: Response, next: NextFunction) => {
+    return loginController.handle(request, response, next);
+  },
+);
 
 export default userRoutes;
