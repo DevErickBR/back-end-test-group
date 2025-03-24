@@ -15,7 +15,7 @@ export class LoginController {
     try {
       const { email, password } = bodySchema.parse(request.body);
 
-      
+      const user = await this.loginUseCase.execute({ email, password });
 
       return response.status(200).json({ message: "Login successful" });
     } catch (error) {

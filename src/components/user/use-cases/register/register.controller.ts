@@ -14,6 +14,9 @@ export class RegisterController {
 
     try {
       const { name, email, password } = bodySchema.parse(request.body);
+
+      const user = await this.registerUseCase.execute({ name, email, password });
+
       return response.status(201).json({ message: "User created" });
     } catch (error) {
       next(error);
