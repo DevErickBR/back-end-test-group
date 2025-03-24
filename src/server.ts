@@ -37,5 +37,4 @@ app.listen(env.PORT, () => {
   console.log("Express connected, port: " + env.PORT);
 });
 
-
 export { app };
